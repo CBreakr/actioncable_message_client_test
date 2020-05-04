@@ -104,7 +104,7 @@ function createChatRoomWebsocketConnection(chatRoomId) {
         const msg = JSON.parse(response);
         
         // Ignores pings
-        if (msg.type === "ping" || msg.type === "welcome") {
+        if (msg.type === "ping" || msg.type === "confirm_subscription" || msg.type === "welcome") {
             return;
         } 
 
@@ -269,7 +269,7 @@ function createMainWebsocketConnection(){
         const msg = JSON.parse(response);
         
         // Ignores pings
-        if (msg.type === "ping" || msg.type === "welcome") {
+        if (msg.type === "ping" || msg.type === "confirm_subscription" || msg.type === "welcome") {
             return;
         }
 
